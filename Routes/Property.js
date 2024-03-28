@@ -30,19 +30,19 @@ router.get("/all", async (req, res) => {
 });
 
 router.post("/addProperty", async (req, res) => {
-    const {
-        PropertyType,Negotiable,Price,Ownership,
-        PropertyAge,PropertyApproved,PropertyDescription,BankLoan,
-        Length,Breadth,Area,AreaUnit,NoOfBHK,NoOfFloor,PropertyOwnership,
-        Attached,WesternToilet,Furnished,CarParking,Lift,Electricity,
-        Facing,Name,Mobile,PostedBy,SalesType,FeaturedPackage,PPD_Package,
-        Email,City,AreaType,Pincode,Address,Landmark,Latitude,Longitude
-    } = req.body;
-    console.log(req.file, req.body)
-    let PropertyImage="abc";
-    if (req.file){
-        PropertyImage = "/Images/"+ req.file.filename;
-    }
+    // const {
+    //     PropertyType,Negotiable,Price,Ownership,
+    //     PropertyAge,PropertyApproved,PropertyDescription,BankLoan,
+    //     Length,Breadth,Area,AreaUnit,NoOfBHK,NoOfFloor,PropertyOwnership,
+    //     Attached,WesternToilet,Furnished,CarParking,Lift,Electricity,
+    //     Facing,Name,Mobile,PostedBy,SalesType,FeaturedPackage,PPD_Package,
+    //     Email,City,AreaType,Pincode,Address,Landmark,Latitude,Longitude
+    // } = req.body;
+    //console.log(req.file, req.body)
+    // let PropertyImage="abc";
+    // if (req.file){
+    //     PropertyImage = "/Images/"+ req.file.filename;
+    // }
   try {
     // const data = JSON.parse(req.body.data);
     // const propertyData = {
@@ -57,19 +57,19 @@ router.post("/addProperty", async (req, res) => {
 });
 
 router.put("/updateProperty", async (req, res) => {
-  const {
-      PropertyType,Negotiable,Price,Ownership,
-      PropertyAge,PropertyApproved,PropertyDescription,BankLoan,
-      Length,Breadth,Area,AreaUnit,NoOfBHK,NoOfFloor,PropertyOwnership,
-      Attached,WesternToilet,Furnished,CarParking,Lift,Electricity,
-      Facing,Name,Mobile,PostedBy,SalesType,FeaturedPackage,PPD_Package,
-      Email,City,AreaType,Pincode,Address,Landmark,Latitude,Longitude
-  } = req.body;
-  console.log(req.file, req.body)
-  let PropertyImage="abc";
-  if (req.file){
-      PropertyImage = "/Images/"+ req.file.filename;
-  }
+  // const {
+  //     PropertyType,Negotiable,Price,Ownership,
+  //     PropertyAge,PropertyApproved,PropertyDescription,BankLoan,
+  //     Length,Breadth,Area,AreaUnit,NoOfBHK,NoOfFloor,PropertyOwnership,
+  //     Attached,WesternToilet,Furnished,CarParking,Lift,Electricity,
+  //     Facing,Name,Mobile,PostedBy,SalesType,FeaturedPackage,PPD_Package,
+  //     Email,City,AreaType,Pincode,Address,Landmark,Latitude,Longitude
+  // } = req.body;
+  // console.log(req.file, req.body)
+  // let PropertyImage="abc";
+  // if (req.file){
+  //     PropertyImage = "/Images/"+ req.file.filename;
+  // }
 try {
   // const data = JSON.parse(req.body.data);
   // const propertyData = {
@@ -87,7 +87,7 @@ try {
 
 router.post("/PropertyDetailsById", async (req, res) => {
     const {_id} = req.body;
-    console.log(_id);
+    //console.log(_id);
 
     try {
         
@@ -101,11 +101,11 @@ router.post("/PropertyDetailsById", async (req, res) => {
 
             res.send(data);
         } catch (e) {
-            console.error("Error fetching property details:", e); 
+            //console.error("Error fetching property details:", e); 
             res.status(500).json({ message: "Failed to fetch property details" });
         }
     } catch (e) {
-        console.error("Invalid _id format:", e); 
+        //console.error("Invalid _id format:", e); 
         return res.status(400).json({ message: "Invalid _id format" });
     }
 });

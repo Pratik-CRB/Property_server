@@ -11,6 +11,9 @@ app.use(cors())
 
 const PORT = process.env.PORT || 8080;
 
+// app.use("/", function(res, req){
+//     return res.status(200).json({ message: "welcome to the property_server" });
+// })
 app.use("/SignUp", SignUp)
 app.use("/Property", Property)
 
